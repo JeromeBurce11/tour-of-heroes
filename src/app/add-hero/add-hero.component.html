@@ -1,0 +1,48 @@
+<div class="center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+        Add Hero <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4a.5.5 0 0 0-1 0v3.5H4a.5.5 0 0 0 0 1h3.5V12a.5.5 0 0 0 1 0V8.5H12a.5.5 0 0 0 0-1H8.5V4z" />
+        </svg>
+    </button>
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100 text-center" id="exampleModalLabel">Add Hero</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Name of hero:</label>
+                            <input #heroName [(ngModel)]="nameHero" [ngModelOptions]="{standalone: true}" type="text"
+                                class="form-control" id="recipient-name">
+                        </div>
+                        <div  class="img-responsive center"> <img *ngIf="url!=''" [src]="url" height="220" width="200" margin=50%
+                               /></div>
+                        <div class="form-group center">
+
+                            <br>
+                            <label class="image-upload-container btn btn-bwm">
+                                Upload Image
+                            <input id="fileinput" type="file" (change)="onSelectFile($event)">
+                        </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button " class="btn btn-success" (click)="add(); heroName.value=''"
+                        data-dismiss="modal">
+                        add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

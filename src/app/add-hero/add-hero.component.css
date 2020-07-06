@@ -1,0 +1,19 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;    
+  }
+  #fileinput {
+    display: none;
+  }
+
+  .btn-bwm {
+    background-color: red;
+    border-color: red;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+  
+    
+  }

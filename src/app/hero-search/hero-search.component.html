@@ -1,0 +1,11 @@
+<div class="searchinput">
+  <input #searchBox (input)="search(searchBox.value)" [(ngModel)]="searchtext" class="form-control mr-sm-2"
+    type="search" placeholder="Search a hero ">
+  <span class="glyphicon glyphicon-search"></span>
+  <ul *ngIf="searchtext != null" class="list-group">
+    <li (click)="searchItem()" routerLink="/detail/{{hero.id}}" *ngFor="let hero of heroes$ | async"
+      class="list-group-item">
+      {{hero.name}}
+    </li>
+  </ul>
+</div>
